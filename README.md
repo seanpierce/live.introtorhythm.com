@@ -49,6 +49,8 @@ ufw app list # output - Available applications: OpenSSH
 ufw allow OpenSSH
 ufw enable
 ufw status # note that OpenSSH is set to ALLOWED
+# restart the ssh service
+sudo service ssh restart
 ```
 
 Digital Ocean instructions for basic server setup proceedures can be found [here](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04).
