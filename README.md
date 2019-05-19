@@ -17,11 +17,12 @@ docker exec -t -i icecast_container /bin/sh
 exit
 ```
 
-## Stopping or removing the container
+## Stopping, starting, or removing the container
 
 ```shell
 docker ps # prints a list of running containers
 docker container stop [CONTAINER ID]
+docker container start [CONTAINER ID]
 docker container rm [CONTAINER ID]
 ```
 
@@ -35,8 +36,17 @@ docker container rm [CONTAINER ID]
 ```shell
 sudo nano /etc/ssh/sshd_config
 ```
-* Ensure that the row labeled `PermitRootLogin prohibit-password` is changed to `PermitRootLogin yes`
-* and `PasswordAuthentication no` is set to `PasswordAuthentication yes`
+
+| Change                            | To                         |
+|:----------------------------------|:---------------------------|
+| PermitRootLogin prohibit-password | PermitRootLogin yes        |
+| PasswordAuthentication no         | PasswordAuthentication yes |
+
+Then, restart the ssh service
+
+```shell
+sudo service ssh restart
+```
 
 Digital Ocean instructions for enabling ssh password authentication can be found [here](https://www.digitalocean.com/community/questions/error-permission-denied-publickey-when-i-try-to-ssh).
 
