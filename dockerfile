@@ -11,6 +11,8 @@ RUN apk add --update \
         mailcap && \
     rm -rf /var/cache/apk/*
 
+RUN apk add vim nano
+
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
