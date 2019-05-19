@@ -98,3 +98,24 @@ sudo ufw allow 'Nginx Full'
 At this point, you should be able to visit your server's IP address to see the default Nginx page, or http://[ipaddress]:8000 to see the icecast homepage.
 
 Digital Ocean instructions for adjusting firewall settings can be found [here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04).
+
+### SSL certificate setup
+
+LetsEncrypt's certbot has an excellend command line tool used to create and manage free ssl certificates.
+
+```shell
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install certbot python-certbot-nginx 
+```
+
+Once installation is complete, run the command below, and follow along with the instructional prompts.
+
+```shell
+sudo certbot --nginx
+```
+
+Detailed instructions for this process can be found on the certbot site [here](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx).
