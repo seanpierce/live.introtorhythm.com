@@ -1,6 +1,6 @@
 # Icecast Server Environment
 
-## Installation
+## Installation and container setup
 
 ```shell
 git clone [this repo] && cd [this repo]
@@ -66,3 +66,33 @@ sudo systemctl status docker
 ```
 
 Digital Ocean instructions for installing docker can be found [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04).
+
+Next, clone this repo onto the remote machine, build and run the container using the same instructions outlined above in the _Installation and container setup_ section.
+
+### Adjusting firewall settings
+
+Before Nginx can serve the icecast container to the web, you'll need to adjust the server's firewall rules to allow access to he service.
+
+Check the lost of available services:
+
+```shell
+sudo ufw app list
+```
+
+Output:
+
+```env
+Available applications:
+  Nginx Full
+  Nginx HTTP
+  Nginx HTTPS
+  OpenSSH
+```
+
+Enable both HTTP and HTTPS:
+
+```shell
+sudo ufw allow 'Nginx Full'
+```
+
+At this point, you should be able to visit your server's IP address to see the default nginx page, or http://[ipaddress]:8000 to see the icecast homepage.
