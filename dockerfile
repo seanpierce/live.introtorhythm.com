@@ -1,6 +1,8 @@
 FROM alpine:latest
 LABEL maintainer "sumler.sean@gmail.com"
 
+# ENV myName John Doe
+
 RUN addgroup -S icecast && \
     adduser -S icecast
     

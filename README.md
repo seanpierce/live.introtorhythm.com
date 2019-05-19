@@ -11,11 +11,7 @@ docker run -d --name icecast_container-p 8000:8000 [tag]
 ## Traversing the container
 
 ```shell
-docker ps # prints a list of running containers
-docker exec -it icecast_container [COMMAND]
-# example:
-docker exec -it icecast_container ls
-# prints a list of all files and directories in the container root
+docker exec -t -i icecast_container /bin/sh
 ```
 
 ## Stopping or removing the container
