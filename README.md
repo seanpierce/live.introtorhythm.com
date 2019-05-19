@@ -1,6 +1,8 @@
 # Icecast Server Environment
 
-## Installation and container setup
+## Setting up a local container
+
+### Installation and container setup
 
 ```shell
 git clone [this repo] && cd [this repo]
@@ -8,7 +10,7 @@ docker build . -t [tag] -f ./dockerfile
 docker run -d --name icecast_container -p 8000:8000 [tag]
 ```
 
-## Traversing the container
+### Traversing the container
 
 ```shell
 # navigate into the container
@@ -17,7 +19,9 @@ docker exec -t -i icecast_container /bin/sh
 exit
 ```
 
-## Stopping, starting, or removing the container
+### Stopping, starting, or removing the container
+
+Note that this configuration does not allow for the typical ways of stopping and restarting icecast, thus, any change to the _/etc/icecast.xml_ frequires a container restart (stop/start). 
 
 ```shell
 docker ps # prints a list of running containers
