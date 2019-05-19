@@ -83,7 +83,13 @@ Digital Ocean instructions for installing docker can be found [here](https://www
 
 Next, clone this repo onto the remote machine, build and run the container using the same instructions outlined above in the _Installation and container setup_ section.
 
-### Adjusting firewall settings
+### Installing Nginx and adjusting firewall settings
+
+Install Nginx
+
+```shell
+sudo apt-get install nginx
+```
 
 Before Nginx can serve the icecast container to the web, you'll need to adjust the server's firewall rules to allow access to he service.
 
