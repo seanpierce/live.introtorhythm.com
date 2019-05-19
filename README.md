@@ -38,7 +38,7 @@ sudo nano /etc/ssh/sshd_config
 * Ensure that the row labeled `PermitRootLogin prohibit-password` is changed to `PermitRootLogin yes`
 * and `PasswordAuthentication no` is set to `PasswordAuthentication yes`
 
-([Digital Ocean instructions here](https://www.digitalocean.com/community/questions/error-permission-denied-publickey-when-i-try-to-ssh))
+Digital Ocean instructions for enabling ssh password authentication can be found [here](https://www.digitalocean.com/community/questions/error-permission-denied-publickey-when-i-try-to-ssh).
 
 ### Creating a new user and setting up a basic firewall
 
@@ -51,8 +51,18 @@ ufw enable
 ufw status # note that OpenSSH is set to ALLOWED
 ```
 
-([Digital Ocean instructions here](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04))
+Digital Ocean instructions for basic server setup proceedures can be found [here](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-18-04).
 
 ### Installing docker
 
-* Install docker by following the [Digital Ocean instructions](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04) 
+```shell
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+```
+
+Digital Ocean instructions for installing docker can be found [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04).
