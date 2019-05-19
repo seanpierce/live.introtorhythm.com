@@ -6,13 +6,9 @@ LABEL maintainer "sumler.sean@gmail.com"
 RUN addgroup -S icecast && \
     adduser -S icecast
     
-RUN apk add --update \
-        icecast \
-        mailcap && \
-    rm -rf /var/cache/apk/*
-
+RUN apk update
+RUN apk add icecast
 RUN apk add vim nano
-RUN apk add nginx
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
