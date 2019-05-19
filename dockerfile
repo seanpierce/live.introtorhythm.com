@@ -12,6 +12,7 @@ RUN apk add --update \
     rm -rf /var/cache/apk/*
 
 RUN apk add vim nano
+RUN apk add nginx
 
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
