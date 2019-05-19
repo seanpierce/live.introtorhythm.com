@@ -73,7 +73,7 @@ Next, clone this repo onto the remote machine, build and run the container using
 
 Before Nginx can serve the icecast container to the web, you'll need to adjust the server's firewall rules to allow access to he service.
 
-Check the lost of available services:
+Check the list of available services:
 
 ```shell
 sudo ufw app list
@@ -95,4 +95,6 @@ Enable both HTTP and HTTPS:
 sudo ufw allow 'Nginx Full'
 ```
 
-At this point, you should be able to visit your server's IP address to see the default nginx page, or http://[ipaddress]:8000 to see the icecast homepage.
+At this point, you should be able to visit your server's IP address to see the default Nginx page, or http://[ipaddress]:8000 to see the icecast homepage.
+
+Digital Ocean instructions for adjusting firewall settings can be found [here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04).
