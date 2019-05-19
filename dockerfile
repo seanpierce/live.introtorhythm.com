@@ -17,7 +17,7 @@ RUN apk add nginx
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-EXPOSE 8000
+EXPOSE 8000 8443
 VOLUME ["/var/log/icecast"]
 ENTRYPOINT ["/entrypoint.sh"]
 CMD icecast -c /etc/icecast.xml

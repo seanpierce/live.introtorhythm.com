@@ -119,3 +119,19 @@ sudo certbot --nginx
 ```
 
 Detailed instructions for this process can be found on the certbot site [here](https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx).
+
+### Setup icecast to run on secure port
+
+From your remote server, navigate into the shell of the docker container per the instructions in the _Traversing the container_ section:
+
+```shell
+docker exec -t -i icecast_container /bin/sh
+```
+
+Modify the icecast.xml and enable a new _listen-socket_ on port: 8443, with the _ssl_ attribute set to 1:
+
+```shell
+nano etc/icecast.xml
+```
+
+Documnetation pertaining to the icecast configuration file can be found [here](http://icecast.org/docs/icecast-2.4.1/config-file.html).
