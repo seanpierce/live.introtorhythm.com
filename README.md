@@ -154,4 +154,15 @@ Modify the icecast.xml and enable a new _listen-socket_ on port: 8443, with the 
 nano etc/icecast.xml
 ```
 
+```xml
+...
+<listen-socket>
+    <port>8443</port>
+    <ssl>1</ssl>
+</listen-socket>
+...
+```
+
+Now, here is the tricky part - for some reason, the default configuration of the LetsEncrypt ssl certificate _will not_ work for icecast. What you'll need to do is copy the text form the cert.pem file to another file (lets call it icecast.pem) and then concatenate the text from privkey.pem file the newly created file. Check out [this Stack Overflow resolution](https://stackoverflow.com/questions/49300064/icecast-2-and-ssl) for more details.
+
 Documnetation pertaining to the icecast configuration file can be found [here](http://icecast.org/docs/icecast-2.4.1/config-file.html).
